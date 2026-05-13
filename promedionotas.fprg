@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="promedio notas"/>
+        <attribute name="authors" value="alvar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-05 04:06:05 "/>
+        <attribute name="created" value="YWx2YXI7QVNVU01BUlRJTkVaMTU7MjAyNi0wNC0wNTsiMDM6NDk6MDggIjsyNzY4"/>
+        <attribute name="edited" value="YWx2YXI7QVNVU01BUlRJTkVaMTU7MjAyNi0wNC0wNTsiMDQ6MDY6MDUgIjsxOzI4Njc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="promedio, notaA, notaB, notaC, notaD" type="Real" array="False" size=""/>
+            <input variable="notaA"/>
+            <input variable="notaB"/>
+            <input variable="notaC"/>
+            <input variable="notaD"/>
+            <assign variable="promedio" expression="notaA+notaB+notaC+notaD/4"/>
+            <output expression="promedio" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
