@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="ejercicio hotel"/>
+        <attribute name="authors" value="alvar"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-09 05:16:19 "/>
+        <attribute name="created" value="YWx2YXI7QVNVU01BUlRJTkVaMTU7MjAyNi0wNC0wODsiMDc6Mjk6MzcgIjsyNzc1"/>
+        <attribute name="edited" value="YWx2YXI7QVNVU01BUlRJTkVaMTU7MjAyNi0wNC0wOTsiMDU6MTY6MTkgIjs0OzI4ODE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Total, ND" type="Real" array="False" size=""/>
+            <declare name="TipoH" type="String" array="False" size=""/>
+            <declare name="Comida" type="Boolean" array="False" size=""/>
+            <comment text="Digitar el TipoH&quot;ventilador&quot; , &quot;Aire&quot; o &quot;Suite&quot;"/>
+            <output expression="&quot;favor digitar TipoH Aire,Suite o Ventilador&quot;" newline="True"/>
+            <input variable="TipoH"/>
+            <input variable="ND"/>
+            <input variable="Comida"/>
+            <if expression="TipoH=&quot;Ventilador&quot;">
+                <then>
+                    <assign variable="Total" expression="ND*70000"/>
+                </then>
+                <else>
+                    <if expression="TipoH=&quot;Aire&quot;">
+                        <then>
+                            <assign variable="Total" expression="ND*90000"/>
+                        </then>
+                        <else>
+                            <assign variable="Total" expression="ND*100000"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="ND&gt;=7">
+                <then>
+                    <assign variable="Total" expression="Total*0.85"/>
+                </then>
+                <else/>
+            </if>
+            <if expression="Comida">
+                <then>
+                    <assign variable="Total" expression="Total+ND*30000"/>
+                </then>
+                <else/>
+            </if>
+            <output expression="Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
