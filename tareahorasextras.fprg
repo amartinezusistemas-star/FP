@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="tarea horas extras"/>
+        <attribute name="authors" value="ISAURO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-22 06:25:40 "/>
+        <attribute name="created" value="SVNBVVJPO0RFU0tUT1AtN0oxVUpRNTsyMDI2LTA0LTIxOzA5OjMzOjExIHAu4oCvbS47MTExOTQ="/>
+        <attribute name="edited" value="SVNBVVJPO0RFU0tUT1AtN0oxVUpRNTsyMDI2LTA0LTIxOzA5OjQxOjI5IHAu4oCvbS47MTsxMTMxMA=="/>
+        <attribute name="edited" value="YWx2YXI7QVNVU01BUlRJTkVaMTU7MjAyNi0wNC0yMjsiMDY6MjU6NDAgIjsyOzI4Njk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Total, ValorHTEX, THEX" type="Real" array="False" size=""/>
+            <assign variable="ValorHTEX" expression="30000"/>
+            <output expression="&quot;Dime las horas extras que trabajaste en la semana?&quot;" newline="True"/>
+            <input variable="THEX"/>
+            <assign variable="Total" expression="THEX*ValorHTEX"/>
+            <output expression="Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
