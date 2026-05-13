@@ -1,0 +1,150 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Prueba"/>
+        <attribute name="authors" value="ISAURO"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2026-04-10 05:26:12 p.&#8239;m."/>
+        <attribute name="created" value="SVNBVVJPO0RFU0tUT1AtN0oxVUpRNTsyMDI2LTA0LTEwOzAxOjUwOjMxIHAu4oCvbS47MTExODU="/>
+        <attribute name="edited" value="SVNBVVJPO0RFU0tUT1AtN0oxVUpRNTsyMDI2LTA0LTEwOzA1OjI2OjEyIHAu4oCvbS47MTU7MTEzNTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="Total" type="Real" array="False" size=""/>
+            <declare name="Comida" type="Boolean" array="False" size=""/>
+            <declare name="Aire, Ventilador, Suite" type="Boolean" array="False" size=""/>
+            <declare name="NDA, NDV, NDS" type="Real" array="False" size=""/>
+            <output expression="&quot;Te ofrecemos 3 tipos de habitacion; Aire,Ventildor y Suite.  quieres estar en Aire?&quot;" newline="True"/>
+            <input variable="Aire"/>
+            <if expression="Aire">
+                <then>
+                    <output expression="&quot;cuantos dias?&quot;" newline="True"/>
+                    <input variable="NDA"/>
+                    <assign variable="Total" expression="NDA*90000"/>
+                    <output expression="&quot;Quieres estar en Ventilador?&quot;" newline="True"/>
+                    <input variable="Ventilador"/>
+                    <if expression="Ventilador">
+                        <then>
+                            <output expression="&quot;Cuantos dias?&quot;" newline="True"/>
+                            <input variable="NDV"/>
+                            <assign variable="Total" expression="NDV*70000+Total"/>
+                            <output expression="&quot;Quieres estar en Suite?&quot;" newline="True"/>
+                            <input variable="Suite"/>
+                            <if expression="Suite">
+                                <then>
+                                    <output expression="&quot;Cuantos dias?&quot;" newline="True"/>
+                                    <input variable="NDS"/>
+                                    <assign variable="Total" expression="NDS*100000+Total"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <if expression="NDA+NDV+NDS&gt;=7">
+                                <then>
+                                    <assign variable="Total" expression="Total*0.85"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Quieres los dias con comida incluida?&quot;" newline="True"/>
+                            <input variable="Comida"/>
+                            <if expression="Comida">
+                                <then>
+                                    <assign variable="Total" expression="Total+(NDA+NDV+NDS)*30000"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Quieres estar en Suite?&quot;" newline="True"/>
+                            <input variable="Suite"/>
+                            <if expression="Suite">
+                                <then>
+                                    <output expression="&quot;Cuantos dias?&quot;" newline="True"/>
+                                    <input variable="NDS"/>
+                                    <assign variable="Total" expression="NDS*100000+Total"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <if expression="NDA+NDS&gt;=7">
+                                <then>
+                                    <assign variable="Total" expression="Total*0.85"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Quieres los dias con comida incluida?&quot;" newline="True"/>
+                            <input variable="Comida"/>
+                            <if expression="Comida">
+                                <then>
+                                    <assign variable="Total" expression="Total+(NDA+NDS)*30000"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Quieres estar en Ventilador?&quot;" newline="True"/>
+                    <input variable="Ventilador"/>
+                    <if expression="Ventilador">
+                        <then>
+                            <output expression="&quot;Cuantos dias?&quot;" newline="True"/>
+                            <input variable="NDV"/>
+                            <assign variable="Total" expression="NDV*70000"/>
+                            <output expression="&quot;Quieres estar en suite?&quot;" newline="True"/>
+                            <input variable="Suite"/>
+                            <if expression="Suite">
+                                <then>
+                                    <output expression="&quot;cuantos dias?&quot;" newline="True"/>
+                                    <input variable="NDS"/>
+                                    <assign variable="Total" expression="NDS*100000+Total"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <if expression="NDV+NDS&gt;=7">
+                                <then>
+                                    <assign variable="Total" expression="Total*0.85"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Quieres los dias con comida incluida?&quot;" newline="True"/>
+                            <input variable="Comida"/>
+                            <if expression="Comida">
+                                <then>
+                                    <assign variable="Total" expression="Total+(NDV+NDS)*30000"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Quieres estar en Suite?&quot;" newline="True"/>
+                            <input variable="Suite"/>
+                            <if expression="Suite">
+                                <then>
+                                    <output expression="&quot;Cuantos dias?&quot;" newline="True"/>
+                                    <input variable="NDS"/>
+                                    <assign variable="Total" expression="NDS*100000"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <if expression="NDS&gt;=7">
+                                <then>
+                                    <assign variable="Total" expression="Total*0.85"/>
+                                </then>
+                                <else/>
+                            </if>
+                            <output expression="&quot;Quieres los dias con comida incluida?&quot;" newline="True"/>
+                            <input variable="Comida"/>
+                            <if expression="Comida">
+                                <then>
+                                    <assign variable="Total" expression="Total+(NDS*30000)"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <output expression="Total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
